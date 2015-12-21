@@ -1,7 +1,7 @@
 # This script builds a docker image from Odoo 8.0 nightly build in Ubuntu 14.04
 
 FROM ubuntu:14.04
-MAINTAINER Ying Liu - www.MindIsSoftware.com 
+MAINTAINER LaoTian@QQgroup:397750860 
 
 # This is the account name created by Odoo setup
 ENV ODOO_USER odoo
@@ -26,7 +26,9 @@ RUN apt-get install -y supervisor openssh-server
 RUN apt-get install --allow-unauthenticated -y odoo
 
 # odoo need wkhtmltopdf to generate report
-RUN wget http://sourceforge.net/projects/wkhtmltopdf/files/0.12.1/wkhtmltox-0.12.1_linux-trusty-amd64.deb
+RUN wget http://download.gna.org/wkhtmltopdf/0.12/0.12.1/wkhtmltox-0.12.1_linux-trusty-amd64.deb
+#RUN wget http://nightly.odoo.com/extra/wkhtmltox-0.12.1.2_linux-jessie-amd64.deb
+#RUN wget http://sourceforge.net/projects/wkhtmltopdf/files/0.12.1/wkhtmltox-0.12.1_linux-trusty-amd64.deb
 RUN dpkg -i wkhtmltox-0.12.1_linux-trusty-amd64.deb
 
 RUN mkdir -p /var/run/sshd
