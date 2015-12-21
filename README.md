@@ -26,7 +26,7 @@ are created using Dockerfile code.
 Run the following command in a machine that has Docker installed. 
 
 ```bash
-sudo docker run --name odoo8 -p 2222:22 -p 5432:5432 -p 8069:8069 -d yingliu4203/odoo8nightly
+sudo docker run --name odoo8 -p 2222:22 -p 5432:5432 -p 8069:8069 -d leangjia/odoo8nightly
 ```
 
 The above command creates a Docker instance named "odoo8" from the 
